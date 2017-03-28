@@ -126,57 +126,49 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>lib$(ProjectName)d</TargetName>
-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>lib$(ProjectName)d</TargetName>
-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>lib$(ProjectName)</TargetName>
-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>lib$(ProjectName)</TargetName>
-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <TargetName>$(ProjectName)d</TargetName>
-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <TargetName>$(ProjectName)d</TargetName>
-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
@@ -186,9 +178,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\include;$(ProjectDir)..\..;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>_WINDOWS;WIN32;_DEBUG;DEBUG;_LIB;_WIN32_WINNT=0x0502; _CRT_SECURE_NO_WARNINGS;ASMV;ASMINF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\include;$(ProjectDir)..\..;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BrowseInformation>false</BrowseInformation>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
       <AssemblerListingLocation>$(OutDir)..\..\asm\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</AssemblerListingLocation>
@@ -197,8 +189,10 @@
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <MinimalRebuild>true</MinimalRebuild>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Precise</FloatingPointModel>
+      <StringPooling>false</StringPooling>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -209,6 +203,7 @@
     </Lib>
     <MASM>
       <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+      <WarningLevel>0</WarningLevel>
     </MASM>
     <PreBuildEvent>
       <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
@@ -220,12 +215,13 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
 )</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-ECHO Off
+      <Command>ECHO OFF
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
-MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+IF NOT EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  MKDIR "$(OutDir)..\..\include"
+  MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 COPY "$(ProjectDir)..\..\zlib.h" "$(OutDir)..\..\include\$(ProjectName)"
 COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
@@ -233,12 +229,8 @@ COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
 MKDIR "$(OutDir)..\..\licenses"
 COPY "$(ProjectDir)..\..\README" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
 
-ENDLOCAL
-      </Command>
+ENDLOCAL</Command>
     </PostBuildEvent>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -246,8 +238,8 @@ ENDLOCAL
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <PreprocessorDefinitions>_WINDOWS;WIN32;_DEBUG;DEBUG;_LIB;_WIN32_WINNT=0x0502; _CRT_SECURE_NO_WARNINGS;ASMV;ASMINF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\include;$(ProjectDir)..\..;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;_DEBUG;DEBUG;_LIB;_WIN32_WINNT=0x0502; _CRT_SECURE_NO_WARNINGS;ASMV;ASMINF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <BrowseInformation>false</BrowseInformation>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
@@ -269,6 +261,7 @@ ENDLOCAL
     </Lib>
     <MASM>
       <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+      <WarningLevel>0</WarningLevel>
     </MASM>
     <PreBuildEvent>
       <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
@@ -280,12 +273,13 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
 )</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-ECHO Off
+      <Command>ECHO OFF
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
-MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+IF NOT EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  MKDIR "$(OutDir)..\..\include"
+  MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 COPY "$(ProjectDir)..\..\zlib.h" "$(OutDir)..\..\include\$(ProjectName)"
 COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
@@ -293,12 +287,8 @@ COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
 MKDIR "$(OutDir)..\..\licenses"
 COPY "$(ProjectDir)..\..\README" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
 
-ENDLOCAL
-      </Command>
+ENDLOCAL</Command>
     </PostBuildEvent>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -315,12 +305,13 @@ ENDLOCAL
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
       <AssemblerListingLocation>$(OutDir)..\..\asm\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MinimalRebuild>false</MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <StringPooling>true</StringPooling>
       <FloatingPointModel>Precise</FloatingPointModel>
       <FloatingPointExceptions>false</FloatingPointExceptions>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -331,6 +322,7 @@ ENDLOCAL
     </Lib>
     <MASM>
       <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+      <WarningLevel>0</WarningLevel>
     </MASM>
     <PreBuildEvent>
       <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
@@ -342,12 +334,13 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
 )</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-ECHO Off
+      <Command>ECHO OFF
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
-MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+IF NOT EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  MKDIR "$(OutDir)..\..\include"
+  MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 COPY "$(ProjectDir)..\..\zlib.h" "$(OutDir)..\..\include\$(ProjectName)"
 COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
@@ -355,12 +348,8 @@ COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
 MKDIR "$(OutDir)..\..\licenses"
 COPY "$(ProjectDir)..\..\README" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
 
-ENDLOCAL
-      </Command>
+ENDLOCAL</Command>
     </PostBuildEvent>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -393,6 +382,7 @@ ENDLOCAL
     </Lib>
     <MASM>
       <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+      <WarningLevel>0</WarningLevel>
     </MASM>
     <PreBuildEvent>
       <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
@@ -404,12 +394,13 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
 )</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-ECHO Off
+      <Command>ECHO OFF
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
-MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+IF NOT EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  MKDIR "$(OutDir)..\..\include"
+  MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 COPY "$(ProjectDir)..\..\zlib.h" "$(OutDir)..\..\include\$(ProjectName)"
 COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
@@ -417,12 +408,8 @@ COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
 MKDIR "$(OutDir)..\..\licenses"
 COPY "$(ProjectDir)..\..\README" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
 
-ENDLOCAL
-      </Command>
+ENDLOCAL</Command>
     </PostBuildEvent>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
@@ -443,14 +430,15 @@ ENDLOCAL
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <FloatingPointModel>Precise</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ImportLibrary>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).lib</ImportLibrary>
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
-      <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -458,6 +446,7 @@ ENDLOCAL
     </Link>
     <MASM>
       <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+      <WarningLevel>0</WarningLevel>
     </MASM>
     <PreBuildEvent>
       <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
@@ -469,12 +458,13 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
 )</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-ECHO Off
+      <Command>ECHO OFF
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
-MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+IF NOT EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  MKDIR "$(OutDir)..\..\include"
+  MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 COPY "$(ProjectDir)..\..\zlib.h" "$(OutDir)..\..\include\$(ProjectName)"
 COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
@@ -482,12 +472,8 @@ COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
 MKDIR "$(OutDir)..\..\licenses"
 COPY "$(ProjectDir)..\..\README" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
 
-ENDLOCAL
-      </Command>
+ENDLOCAL</Command>
     </PostBuildEvent>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <ClCompile>
@@ -508,20 +494,22 @@ ENDLOCAL
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <FloatingPointModel>Precise</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ImportLibrary>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).lib</ImportLibrary>
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
-      <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
     </Link>
     <MASM>
       <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+      <WarningLevel>0</WarningLevel>
     </MASM>
     <PreBuildEvent>
       <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
@@ -533,12 +521,13 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
 )</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-ECHO Off
+      <Command>ECHO OFF
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
-MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+IF NOT EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  MKDIR "$(OutDir)..\..\include"
+  MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 COPY "$(ProjectDir)..\..\zlib.h" "$(OutDir)..\..\include\$(ProjectName)"
 COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
@@ -546,12 +535,8 @@ COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
 MKDIR "$(OutDir)..\..\licenses"
 COPY "$(ProjectDir)..\..\README" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
 
-ENDLOCAL
-      </Command>
+ENDLOCAL</Command>
     </PostBuildEvent>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <ClCompile>
@@ -576,12 +561,12 @@ ENDLOCAL
       <FloatingPointExceptions>false</FloatingPointExceptions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ImportLibrary>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).lib</ImportLibrary>
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
-      <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -591,6 +576,7 @@ ENDLOCAL
     </Link>
     <MASM>
       <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+      <WarningLevel>0</WarningLevel>
     </MASM>
     <PreBuildEvent>
       <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
@@ -602,12 +588,13 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
 )</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-ECHO Off
+      <Command>ECHO OFF
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
-MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+IF NOT EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  MKDIR "$(OutDir)..\..\include"
+  MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 COPY "$(ProjectDir)..\..\zlib.h" "$(OutDir)..\..\include\$(ProjectName)"
 COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
@@ -615,12 +602,8 @@ COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
 MKDIR "$(OutDir)..\..\licenses"
 COPY "$(ProjectDir)..\..\README" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
 
-ENDLOCAL
-      </Command>
+ENDLOCAL</Command>
     </PostBuildEvent>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <ClCompile>
@@ -646,12 +629,12 @@ ENDLOCAL
       <FloatingPointExceptions>false</FloatingPointExceptions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ImportLibrary>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).lib</ImportLibrary>
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
-      <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -660,6 +643,7 @@ ENDLOCAL
     </Link>
     <MASM>
       <UseSafeExceptionHandlers>true</UseSafeExceptionHandlers>
+      <WarningLevel>0</WarningLevel>
     </MASM>
     <PreBuildEvent>
       <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
@@ -671,12 +655,13 @@ IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
 )</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-ECHO Off
+      <Command>ECHO OFF
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
-MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+IF NOT EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  MKDIR "$(OutDir)..\..\include"
+  MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 COPY "$(ProjectDir)..\..\zlib.h" "$(OutDir)..\..\include\$(ProjectName)"
 COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
@@ -684,12 +669,8 @@ COPY "$(ProjectDir)zconf.h" "$(OutDir)..\..\include\$(ProjectName)"
 MKDIR "$(OutDir)..\..\licenses"
 COPY "$(ProjectDir)..\..\README" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
 
-ENDLOCAL
-      </Command>
+ENDLOCAL</Command>
     </PostBuildEvent>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\adler32.c" />
@@ -708,17 +689,12 @@ ENDLOCAL
     <ClCompile Include="..\..\uncompr.c" />
     <ClCompile Include="..\..\zutil.c" />
     <ClCompile Include="..\..\contrib\masmx64\inffas8664.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Platform)'=='Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\contrib\minizip\ioapi.c" />
     <ClCompile Include="..\..\contrib\minizip\iowin32.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)'=='Debug'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)'=='Release'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\contrib\minizip\unzip.c" />
     <ClCompile Include="..\..\contrib\minizip\zip.c" />
@@ -740,120 +716,24 @@ ENDLOCAL
   </ItemGroup>
   <ItemGroup>
     <MASM Include="..\..\contrib\masmx64\gvmat64.asm">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">false</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">false</UseSafeExceptionHandlers>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">0</WarningLevel>
-      <MakeAllSymbolsPublic Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
-      </MakeAllSymbolsPublic>
+      <ExcludedFromBuild Condition="'$(Platform)'=='Win32'">true</ExcludedFromBuild>
     </MASM>
     <MASM Include="..\..\contrib\masmx64\inffasx64.asm">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">true</ExcludedFromBuild>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">false</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">false</UseSafeExceptionHandlers>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">0</WarningLevel>
-      <MakeAllSymbolsPublic Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
-      </MakeAllSymbolsPublic>
+      <ExcludedFromBuild Condition="'$(Platform)'=='Win32'">true</ExcludedFromBuild>
     </MASM>
     <MASM Include="..\..\contrib\masmx86\inffas32.asm">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">true</ExcludedFromBuild>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">true</UseSafeExceptionHandlers>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">0</WarningLevel>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">/coff %(AdditionalOptions)</AdditionalOptions>
+      <ExcludedFromBuild Condition="'$(Platform)'=='x64'">true</ExcludedFromBuild>
+      <AdditionalOptions>/coff %(AdditionalOptions)</AdditionalOptions>
     </MASM>
     <MASM Include="..\..\contrib\masmx86\match686.asm">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">true</ExcludedFromBuild>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">true</UseSafeExceptionHandlers>
-      <UseSafeExceptionHandlers Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">true</UseSafeExceptionHandlers>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">/coff %(AdditionalOptions)</AdditionalOptions>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">0</WarningLevel>
-      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">0</WarningLevel>
+      <ExcludedFromBuild Condition="'$(Platform)'=='x64'">true</ExcludedFromBuild>
+      <AdditionalOptions>/coff %(AdditionalOptions)</AdditionalOptions>
     </MASM>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\contrib\vstudio\vc11\zlib.rc">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)'=='Debug'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)'=='Release'">true</ExcludedFromBuild>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
